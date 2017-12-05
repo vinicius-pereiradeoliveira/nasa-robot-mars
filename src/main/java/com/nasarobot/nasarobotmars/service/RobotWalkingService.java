@@ -1,23 +1,23 @@
 package com.nasarobot.nasarobotmars.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.nasarobot.nasarobotmars.businessrules.CurrentRobotPosition;
 import com.nasarobot.nasarobotmars.entity.Robot;
 import com.nasarobot.nasarobotmars.output.RobotOutput;
 
 @Service
 public class RobotWalkingService {
 
+	@Autowired
+	private CurrentRobotPosition currentRobotPosition;
+	
 	public RobotOutput newCommandForRobot(String commandInput) {
-		return new RobotOutput(initialPosition(), commandForRobot(commandInput));
+		return new RobotOutput(new Robot().initialPosition(), commandForRobot(commandInput));
 	}
 
-	private String initialPosition() {
-		return new Robot().initialPosition();
-	}
-	
 	private String commandForRobot(String commandInput) {
-		// TODO Auto-generated method stub
-		return null;
+		return currentRobotPosition.searchPositionRobot(commandInput);
 	}
 }
