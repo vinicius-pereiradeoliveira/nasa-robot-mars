@@ -10,6 +10,9 @@ public class Terrain {
 		this.positionY = positionY;
 	}
 	
+	public Terrain() {
+	}
+
 	public int getPositionX() {
 		return positionX;
 	}
