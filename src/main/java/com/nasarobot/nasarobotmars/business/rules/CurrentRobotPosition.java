@@ -4,6 +4,7 @@ import org.springframework.stereotype.Component;
 
 import com.nasarobot.nasarobotmars.entity.CalcCurrentPosition;
 import com.nasarobot.nasarobotmars.entity.Location;
+import com.nasarobot.nasarobotmars.utils.ValidateUtil;
 
 @Component
 public class CurrentRobotPosition {
@@ -33,19 +34,19 @@ public class CurrentRobotPosition {
 	private CalcCurrentPosition executeRoute(char command, Location pos, Integer positionx, Integer positiony) throws Exception {
 		
 		if (command == 'M' && pos == Location.NORTH) {
-			if (!validPosition(positionx, positiony))
+			if (!ValidateUtil.validPosition(positionx, positiony))
 				throw new Exception("Exceeded terrain boundary!");
 			positiony++;
 		} else if (command == 'M' && pos == Location.SOUTH) {
-			if (!validPosition(positionx, positiony))
+			if (!ValidateUtil.validPosition(positionx, positiony))
 				throw new Exception("Exceeded terrain boundary!");
 			positiony--;
 		} else if (command == 'M' && pos == Location.EAST) {
-			if (!validPosition(positionx, positiony))
+			if (!ValidateUtil.validPosition(positionx, positiony))
 				throw new Exception("Exceeded terrain boundary!");
 			positionx++;
 		} else if (command == 'M' && pos == Location.WEST) {
-			if (!validPosition(positionx, positiony))
+			if (!ValidateUtil.validPosition(positionx, positiony))
 				throw new Exception("Exceeded terrain boundary!");
 			positionx--;
 		}
@@ -86,9 +87,4 @@ public class CurrentRobotPosition {
 			return pos;
 		}
 	}
-
-	private boolean validPosition(int positionx, int positiony) {
-		return positionx < 5 && positiony < 5 ? true : false;
-	}
-	
 }
