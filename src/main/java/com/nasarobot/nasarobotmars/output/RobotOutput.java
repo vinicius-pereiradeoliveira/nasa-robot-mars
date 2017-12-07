@@ -2,16 +2,10 @@ package com.nasarobot.nasarobotmars.output;
 
 public class RobotOutput {
 	
-	private String initialPosition;
 	private String positionAfterCommand;
-	
-	public RobotOutput(String initialPosition, String positionAfterCommand) {
-		this.initialPosition = initialPosition;
-		this.positionAfterCommand = positionAfterCommand;
-	}
 
-	public String getInitialPosition() {
-		return initialPosition;
+	public RobotOutput(String positionAfterCommand) {
+		this.positionAfterCommand = positionAfterCommand;
 	}
 
 	public String getPositionAfterCommand() {
@@ -20,10 +14,7 @@ public class RobotOutput {
 
 	@Override
 	public String toString() {
-		return "LocationRobotOutput {"
-				+ "initialPosition=" + initialPosition + "," 
-				+ "positionAfterCommand=" + positionAfterCommand + ","
-				+ "}";
+		return "("+positionAfterCommand+")";
 	}
 	
 	

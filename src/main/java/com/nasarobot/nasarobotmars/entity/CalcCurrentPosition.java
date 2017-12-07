@@ -36,8 +36,7 @@ public class CalcCurrentPosition {
 
 	@Override
 	public String toString() {
-		return "CalcCurrentPosition [positionx=" + positionx + ", positiony=" + positiony + ", location=" + location
-				+ "]";
+		return "("+positionx+","+positiony+","+location.getLocation()+")";
 	}
 	
 	
