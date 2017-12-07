@@ -20,32 +20,16 @@ public class Robot {
 		return positionCurrentX;
 	}
 
-	public void setPositionCurrentX(int positionCurrentX) {
-		this.positionCurrentX = positionCurrentX;
-	}
-
 	public int getPositionCurrentY() {
 		return positionCurrentY;
-	}
-
-	public void setPositionCurrentY(int positionCurrentY) {
-		this.positionCurrentY = positionCurrentY;
 	}
 
 	public Location getLocation() {
 		return location;
 	}
 	
-	public void setLocation(Location location) {
-		this.location = location;
-	}
-
 	public String getInitialPosition() {
 		return initialPosition;
-	}
-
-	public void setInitialPosition(String initialPosition) {
-		this.initialPosition = initialPosition;
 	}
 
 	@Override

@@ -20,6 +20,7 @@ public class SendCommandRobotApiTest {
 	
 	@Autowired
     private TestRestTemplate restTemplate;
+	
 	final String BASE_PATH = "/rest/mars";
 	
 	@Test 

@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.nasarobot.nasarobotmars.business.rules.CurrentRobotPosition;
-import com.nasarobot.nasarobotmars.output.RobotOutput;
 import com.nasarobot.nasarobotmars.utils.ValidateUtil;
 
 @Service
